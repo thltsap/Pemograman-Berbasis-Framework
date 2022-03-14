@@ -9,6 +9,7 @@ const Post = (props) =>{
                 <div class ="konten-artikel">
                     <div class="judul-artikel">{props.judul}</div>
                     <p class="isi-artikel">{props.isi}</p>
+                    <button className="btn btn-sm btn-warning" onClick={() => props.hapusArtikel(props.idArtikel)}>Hapus</button>
                 </div>
             </div>       
          

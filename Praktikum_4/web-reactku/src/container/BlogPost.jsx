@@ -7,13 +7,24 @@ class BlogPost extends Component{
         listArtikel: []
     }
 
-    componentDidMount() {
-        fetch('http://localhost:3001/posts')
+    ambilDataDariServerAPI= () => {
+        fetch( 'http://localhost:3001/posts')
             .then(response => response.json())
-            .then(result => {
+            .then(jsonHasilAmbilDariAPI => {
                 this.setState({
-                    listArtikel: result
-                })
+                    listArtikel: jsonHasilAmbilDariAPI
+                                })
+            })
+    }
+
+    componentDidMount(){
+        this.ambilDataDariServerAPI()
+    }
+
+    handleHapusArtikel = (data) => {
+        fetch(`http://localhost:3001/posts/${data}`, { method: 'DELETE' })
+            .then(() => {
+                this.ambilDataDariServerAPI()
             })
     }
 
@@ -25,7 +36,7 @@ class BlogPost extends Component{
                 <Post judul="JTI Polinema" isi="Jurusan Teknologi Informasi"/>
                 {
                     this.state.listArtikel.map(artikel => {
-                        return <Post key={artikel.id} judul={artikel.title} isi={artikel.body}/>
+                        return <Post key={artikel.id} judul={artikel.title} isi={artikel.body} idArtikel={artikel.id} hapusArtikel={this.handleHapusArtikel} />
                     })
                 }
             </div>
