@@ -1,45 +1,54 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './component/Login.css';
 
 const Register = () =>{
     return (
-        <div class="kotak_login">
-            <center><h2>Form Register</h2></center>
-            <center> <h1 class="tulisan_login">Tugas Pertemuan Ketiga</h1></center>
-            <form>
-            <div class="form-inline">
-                    <label>Name</label>
-                    <input type="text" name="name" class="form_login" placeholder="Masukkan nama"/>
-                </div>                
-                <div class="form-inline">
-                    <label>Username</label>
-                    <input type="text" name="username" class="form_login" placeholder="Masukkan Username"/>
-                </div>
-                <div class="form-inline">
-                    <label>Address</label>
-                    <input type="text" name="address" class="form_login" placeholder="Masukkan Alamat"/>
-                </div>
-                <div class="form-inline">
-                    <label>No.Hp</label>
-                    <input type="number" name="no_handphone" class="form_login" placeholder="Masukkan No.Handphone"/>
-                </div>
-                <div class="form-inline">
-                    <label>Password</label>
-                    <input type="password" name="password" class="form_login" placeholder="Masukkan Password anda"/>
-                </div>
+        <div className="flex-row align-items-center">
+            <div className="container mt-4">
+                <div className="row justify-content-center">
+                    <div className="col-md-6">
+                        <div className="card p-4">
+                            <div className="card-body">
+                                <h4>
+                                    Halaman Register
+                                </h4>
+                                <div className="form-group mt-4">
+                                    <label>Name</label>
+                                    <input placeholder="Name" className="form-control" />
+                                </div>
 
-                <input type="submit" class="button_login" value="REGISTER"/>
+                                <div className="form-group mt-4">
+                                    <label>Username</label>
+                                    <input placeholder="Username" className="form-control" />
+                                </div>
 
-               <center> <p><input type='checkbox' name='remember_me' value='Remember Me' />Remember Me</p></center>
+                                <div className="form-group mt-4">
+                                    <label>Number Phone</label>
+                                    <input placeholder="NumberPhone" className="form-control" />
+                                </div>
 
-                
-                <center><input type="submit" class="button_cancel" value="Cancel"/></center>
+                                <div className="form-group mt-4">
+                                    <label>Address</label>
+                                    <input placeholder="Address" className="form-control" />
+                                </div>
 
-                <br/>
-                <br/>
-               
-            </form>
-            
+                                <div className="form-group mt-4">
+                                    <label>Password</label>
+                                    <input placeholder="Password" className="form-control" />
+                                </div>
+
+                                <div className="form-group mt-4">
+                                    <label>Confirm Password</label>
+                                    <input placeholder="ConfirmPassword" className="form-control" />
+                                </div>
+
+                                <button className="btn btn-primary mt-4">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

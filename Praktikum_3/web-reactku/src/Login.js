@@ -1,36 +1,41 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './component/Login.css';
 
 const Login = () =>{
     return (
-        <div class="kotak_login">
-            <center><h2>Form Login</h2></center>
-            <center> <h1 class="tulisan_login">Tugas Pertemuan Ketiga</h1></center>
+        <div className="flex-row align-items-center">
+            <div className="container mt-4">
+                <div className="row justify-content-center">
+                    <div className="col-md-6">
+                        <div className="card p-4">
+                            <div className="card-body">
+                                <h4>
+                                    Halaman Login
+                                </h4>
+                                <div className="form-group mt-4">
+                                    <label>Username</label>
+                                    <input placeholder="Username" className="form-control" />
+                                </div>
 
-            <form>
-                <div class="form-inline">
-                    <label>Username</label>
-                    <input type="text" name="username" class="form_login" placeholder="Masukkan Username"/>
+                                <div className="form-group mt-4">
+                                    <label>Password</label>
+                                    <input placeholder="Password" className="form-control" />
+                                </div>
+
+                                <div className="form-group mt-4">
+                                    <label>Confirm Password</label>
+                                    <input placeholder="ConfirmPassword" className="form-control" />
+                                </div>
+
+
+                                <button className="btn btn-primary mt-4">Login</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="form-inline">
-                    <label>Password</label>
-                    <input type="password" name="password" class="form_login" placeholder="Masukkan Password anda"/>
-                </div>
-
-                <input type="submit" class="button_login" value="LOGIN"/>
-
-               <center> <p><input type='checkbox' name='remember_me' value='Remember Me' />Remember Me</p></center>
-              
-                <center><input type="submit" class="button_cancel" value="Cancel"/></center>
-
-                <br/>
-                <br/>
-               
-            </form>
-            
+            </div>
         </div>
     );
 }
-
 export default Login;
