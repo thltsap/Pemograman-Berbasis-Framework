@@ -1,0 +1,40 @@
+{
+  "mahasiswa": [
+    {
+      "id": 1647358114421,
+      "nim": 140823453,
+      "nama": "Taylor Swift",
+      "alamat": "Jl. Menur No. 9 Surabaya",
+      "hp": "081802023523",
+      "angkatan": 2014,
+      "status": "lulus"
+    },
+    {
+      "id": 1647358117864,
+      "nim": 160824063,
+      "nama": "Drake",
+      "alamat": "Jl. Sutra No. 22 Padang",
+      "hp": "081345728901",
+      "angkatan": 2016,
+      "status": "lulus"
+    },
+    {
+      "id": 1647358110853,
+      "nim": 100342069,
+      "nama": "Arash",
+      "alamat": "Jl. Permata Indah No. 8A Balikpapan",
+      "hp": "082298634713",
+      "angkatan": 2020,
+      "status": "aktif"
+    },
+    {
+      "id": 1647358112441,
+      "nim": "18273",
+      "nama": "Rizky Saputra",
+      "alamat": "Jl.Kamboja",
+      "hp": "08363722",
+      "angkatan": "2012",
+      "status": "Lulus"
+    }
+  ]
+}

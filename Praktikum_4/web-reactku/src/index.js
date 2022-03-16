@@ -3,10 +3,11 @@ import ReactDOM, { render } from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import reportWebVitals from './reportWebVitals';
-import BlogPost from  "./container/BlogPost";
+// import BlogPost from  "./container/BlogPost";
+import MahasiswaPost from  "./container/MahasiswaPost";
 
 ReactDOM.render(
-  <BlogPost />,
+  <MahasiswaPost />,
   document.getElementById('content')
 );
 // If you want to start measuring performance in your app, pass a function
