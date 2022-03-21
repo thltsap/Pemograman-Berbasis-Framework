@@ -35,6 +35,18 @@
       "hp": "08363722",
       "angkatan": "2012",
       "status": "Lulus"
+    },
+    {
+      "id": 1647834477874,
+      "nim": "18273",
+      "nama": "Thalita Saniyya Aqilla Putri",
+      "alamat": "JL. IR. P.H.M. Noor",
+      "hp": "09387233",
+      "angkatan": "2002",
+      "status": "Aktif"
+    },
+    {
+      "id": 1647834477875
     }
   ]
 }

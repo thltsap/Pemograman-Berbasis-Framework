@@ -12,7 +12,7 @@ class MahasiswaPost extends Component{
             alamat: "",
             hp: "",
             angkatan: "",
-            status: ""
+            status: ""            
         }
     }
 
@@ -37,14 +37,27 @@ class MahasiswaPost extends Component{
             })
     }
 
+    handleHapusSemuaMahasiswa = () => {
+        this.state.listMahasiswa.foreach ((item) => {
+            console.log (item)
+        })
+        
+        // fetch(`http://localhost:3002/mahasiswa/` + {item.id}, { method: 'DELETE' })
+        //     .then(() => {
+        //         this.ambilDataDariServerAPI()
+        //     })        
+        
+    }
+
     handleTambahMahasiswa = (event) => {
         let formInsertMahasiswa = { ...this.state.insertMahasiswa }
         let timestamp = new Date().getTime()
         formInsertMahasiswa['id'] = timestamp
         formInsertMahasiswa[event.target.name] = event.target.value
         this.setState({
-            insertMahasiswa: formInsertMahasiswa
+            insertMahasiswa: formInsertMahasiswa,            
         })
+       
     }
 
     handleTombolSimpan = () => {
@@ -60,7 +73,7 @@ class MahasiswaPost extends Component{
                 this.ambilDataDariServerAPI()
             })
     }
-
+    
 
     render() {
         return (            
@@ -114,7 +127,7 @@ class MahasiswaPost extends Component{
                     {
                         this.state.listMahasiswa.reverse().map(mahasiswa => {
                             return <PostMahasiswa key={mahasiswa.id} nim={mahasiswa.nim} nama={mahasiswa.nama} alamat={mahasiswa.alamat} 
-                            hp={mahasiswa.hp} angkatan={mahasiswa.angkatan} status={mahasiswa.status} idMahasiswa={mahasiswa.id} hapusMahasiswa={this.handleHapusMahasiswa} />
+                            hp={mahasiswa.hp} angkatan={mahasiswa.angkatan} status={mahasiswa.status} idMahasiswa={mahasiswa.id} date={mahasiswa.Date} hapusMahasiswa={this.handleHapusSemuaMahasiswa} />
                         })
                     }
                 </div>
