@@ -11,6 +11,7 @@ import Header from "./Header";
 import firebase from 'firebase';
 import firebaseConfig from "./firebase.config";
 import reportWebVitals from "./reportWebVitals"
+import "firebase/auth";
 
 firebase.initializeApp(firebaseConfig);
 

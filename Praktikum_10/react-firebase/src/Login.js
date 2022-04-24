@@ -1,6 +1,7 @@
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import { AuthContext } from "./index";
 import firebase from 'firebase';
+
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -20,27 +21,37 @@ const Login = () => {
                 setErrors(e.message);
             });
     };
+    const auth = firebase.auth();
+    const googleProvider = new firebase.auth.GoogleAuthProvider()
+    const signInWithGoogle = () => {
+        auth.signInWithPopup(googleProvider).then((res) => {
+            console.log(res.user)
+        }).catch((error) => {
+            console.log(error.message)
+        })
+    }
 
-    return(
+
+    return (
         <div>
             <h1>Login</h1>
             <form onSubmit={e => handleForm(e)}>
                 <input
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                name="email"
-                type="email"
-                placeholder="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    name="email"
+                    type="email"
+                    placeholder="email"
                 />
-               <input
-                onChange={e => setPassword(e.target.value)}
-                name="password"
-                value={password}
-                type="password"
-                placeholder="password"
+                <input
+                    onChange={e => setPassword(e.target.value)}
+                    name="password"
+                    value={password}
+                    type="password"
+                    placeholder="password"
                 />
                 <hr />
-                <button className="googleBtn" type="button">
+                <button className="googleBtn" type="button" onClick={signInWithGoogle}>
                     <img
                         src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                         alt="logo"
